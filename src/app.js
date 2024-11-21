@@ -21,6 +21,19 @@ app.use(bodyParser.json({ limit: "200mb" }));
 
 app.use(cors());
 
+const {
+  login,
+  register,
+  buildData,
+  addResponses,
+  getData,
+  formSubData,
+  getUserFormData,
+  postIndividualResperDay,
+  updateIndividualResperDay,
+  getIndividualResperDay,
+} = require("./functions");
+
 const registerData = require("./models/Register");
 
 app.get("/products", async (req, res) => {
@@ -40,6 +53,7 @@ app.get("/testing", async (req, res) => {
   }
 });
 
+app.post("/login", login);
 
 mongoose.set("strictQuery", false);
 mongoose
@@ -57,7 +71,8 @@ mongoose
     console.log(error);
   });
 
-export default app;
+// export default app;
+module.exports = app;
 
 // // Export as a Vercel serverless function
 // export default (req, res) => {
