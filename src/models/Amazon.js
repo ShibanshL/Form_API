@@ -1,4 +1,6 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from "mongoose";
+
 const detailSchema = new mongoose.Schema(
   {
     name: String,
@@ -10,4 +12,6 @@ const detailSchema = new mongoose.Schema(
 );
 
 const Details = mongoose.model("details", detailSchema);
-module.exports = Details;
+// module.exports = Details;
+
+export default Details

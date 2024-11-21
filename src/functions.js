@@ -1,7 +1,18 @@
-const registerData = require("./models/Register");
-const Built_Data = require("./models/Build");
-const form_sub_Data = require("./models/FormSubmission");
-const chartData = require("./models/ChartData");
+// const registerData = require("./models/Register");
+
+import registerData from "./models/Register.js";
+
+// const Built_Data = require("./models/Build");
+
+import Built_Data from "./models/Build.js";
+
+// const form_sub_Data = require("./models/FormSubmission");
+
+import form_sub_Data from "./models/FormSubmission.js";
+
+// const chartData = require("./models/ChartData");
+
+import chartData from "./models/ChartData.js";
 
 const login = async (req, res) => {
   try {
@@ -193,7 +204,7 @@ const getIndividualResperDay = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   login,
   register,
   buildData,

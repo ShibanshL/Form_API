@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const registerDataSchema = new mongoose.Schema(
   {
     name: String,
@@ -9,4 +10,5 @@ const registerDataSchema = new mongoose.Schema(
 );
 
 const registerData = mongoose.model("registers", registerDataSchema);
-module.exports = registerData;
+// module.exports = registerData;
+export default registerData

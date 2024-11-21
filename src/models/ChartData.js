@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const nestedOBJ = new mongoose.Schema(
   {
@@ -15,4 +16,6 @@ const chartdetailSchema = new mongoose.Schema({
 });
 
 const chart_data = mongoose.model("chartData", chartdetailSchema);
-module.exports = chart_data;
+// module.exports = chart_data;
+
+export default chart_data

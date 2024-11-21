@@ -1,13 +1,28 @@
-const express = require("express");
-const cors = require("cors");
+// const express = require("express");
 
-require("dotenv").config();
+import express from 'express'
+
+// const cors = require("cors");
+
+import cors from 'cors'
+
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+// require("dotenv").config();
 
 const app = express();
-const mongoose = require("mongoose");
+
+// const mongoose = require("mongoose");
+
+import mongoose from 'mongoose';
 
 const PORT = process.env.PORT || 3000;
-const bodyParser = require("body-parser");
+
+// const bodyParser = require("body-parser");
+
+import bodyParser from 'body-parser'
 
 const headers = {
   "Content-Type": "application/json",
@@ -21,7 +36,20 @@ app.use(bodyParser.json({ limit: "200mb" }));
 
 app.use(cors());
 
-const {
+// const {
+//   login,
+//   register,
+//   buildData,
+//   addResponses,
+//   getData,
+//   formSubData,
+//   getUserFormData,
+//   postIndividualResperDay,
+//   updateIndividualResperDay,
+//   getIndividualResperDay,
+// } = require("./functions");
+
+import {
   login,
   register,
   buildData,
@@ -32,9 +60,11 @@ const {
   postIndividualResperDay,
   updateIndividualResperDay,
   getIndividualResperDay,
-} = require("./functions");
+} from './functions.js'
 
-const registerData = require("./models/Register");
+// const registerData = require("./models/Register");
+
+import registerData from './models/Register.js';
 
 app.get("/products", async (req, res) => {
   try {
@@ -55,6 +85,24 @@ app.get("/testing", async (req, res) => {
 
 app.post("/login", login);
 
+app.post("/register", register);
+
+app.post("/build/:id", buildData);
+
+app.patch("/getbuild/:id", addResponses);
+
+app.get("/data/:id", getData);
+
+app.post("/formSub/:id", formSubData);
+
+app.get("/formSub/:id/:f_Id", getUserFormData);
+
+app.post("/indRes/:id", postIndividualResperDay);
+
+app.patch("/indRes/:id", updateIndividualResperDay);
+
+app.get("/indRes/:id", getIndividualResperDay);
+
 mongoose.set("strictQuery", false);
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -71,8 +119,8 @@ mongoose
     console.log(error);
   });
 
-// export default app;
-module.exports = app;
+export default app;
+// module.exports = app;
 
 // // Export as a Vercel serverless function
 // export default (req, res) => {
