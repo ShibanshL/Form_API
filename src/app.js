@@ -57,7 +57,7 @@ mongoose
     console.log(error);
   });
 
-// export default app;
+export default app;
 
 // // Export as a Vercel serverless function
 // export default (req, res) => {
