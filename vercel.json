@@ -11,6 +11,5 @@
         "headers":{
             "Access-Control-Allow-Origin":"*"
         }
-    }],
-    "rewrites":[{"source":"/(.*)","destination":"/api"}]
+    }]
 }
