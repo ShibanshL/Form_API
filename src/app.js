@@ -34,12 +34,7 @@ app.use(express.json());
 app.use(bodyParser.json({ limit: "200mb" }));
 
 
-app.use(cors(
-  {
-    origin:"http://localhost:5173/React_FormBuilder/",
-    methods:["GET","POST","PATCH","PUT","DELETE"]
-  }
-));
+app.use(cors());
 
 // const {
 //   login,
